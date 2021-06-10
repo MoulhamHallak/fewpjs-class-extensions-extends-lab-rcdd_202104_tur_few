@@ -15,14 +15,12 @@ class Polygon {
 }
 
 class Triangle extends Polygon {
-  get isValid() {
-    let side1 = this.sides[0]
-    let side2 = this.sides[1]
-    let side3 = this.sides[2]
-    if (this.count !== 3) {
-      return;
+  get isValid(){
+    if((this.sides[0] + this.sides[1]) > this.sides[2] && (this.sides[1] + this.sides[2]) > this.sides[0] && (this.sides[2] + this.sides[0]) > this.sides[1]) {
+      return true;
+    } else {
+      return false;
     }
-    return ((side1 === side2) && (side1 === side3) && (side2 === side3))
   }
 }
 
